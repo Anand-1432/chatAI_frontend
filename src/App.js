@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+import { Route, Routes } from 'react-router-dom'
+import { requestGallery } from './actions/galleryAction'
+import Chat from './pages/chat/Chat'
+import Gallery from './pages/gallery/Gallery'
+import Home from './pages/home/Home'
+import ImageGenerator from './pages/imageGenerator/ImageGenerator'
 
-function App() {
+const App = () => {
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(requestGallery());
+  }, []);
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/chat' element={<Chat />} />
+        <Route path='/image_generation' element={<ImageGenerator />} />
+        <Route path='/gallery' element={<Gallery />} />
+      </Routes>
+    </>
+  )
 }
 
-export default App;
+export default App

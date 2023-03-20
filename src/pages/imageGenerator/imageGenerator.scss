@@ -1,0 +1,178 @@
+.ImageGeneration {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 230px 1fr;
+    // background-color: rgba(52, 53, 65);
+    background-color: var(--bg-color);
+
+    .ImageGenerationLeft {
+        width: 100%;
+    }
+
+    .ImageGenerationRight {
+        width: 100%;
+        height: 100%;
+        position: relative;
+
+        .inner {
+            width: 100%;
+            height: 100vh;
+            overflow-y: scroll;
+
+            .communityLoader {
+                width: 100%;
+                height: 100%;
+                background-color: rgb(255, 255, 255, 0.1);
+                z-index: 20;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                display: grid;
+                place-content: center;
+            }
+
+
+            .innerAiImage {
+                padding-top: 30px;
+                padding-left: 40px;
+                width: 65%;
+
+                h3 {
+                    // color: rgb(255, 255, 255, 0.8);
+                    color: var(--color2);
+                }
+
+                .intro {
+                    color: #01deb2;
+                    font-size: 14px;
+                    margin-top: 15px;
+                    margin-bottom: 15px;
+                }
+
+                .form-group {
+                    padding-top: 20px;
+
+                    label {
+                        font-weight: 500;
+                        // color: white;
+                        color: var(--color2);
+                        margin-bottom: 5px;
+                    }
+
+                    input {
+                        line-height: 25px;
+                        font-size: 14px;
+                        color: black;
+                        font-weight: 500;
+
+                        &::placeholder {
+                            color: #797979;
+                            font-weight: 400;
+                        }
+
+                        background-color: rgb(255, 255, 255, 0.8);
+                    }
+                }
+
+                .imageContainer {
+                    width: 220px;
+                    height: 220px;
+                    // border: 1px dotted white;
+                    border: 1px dotted var(--color1);
+                    margin-top: 25px;
+                    border-radius: 10px;
+                    display: grid;
+                    place-content: center;
+                    position: relative;
+
+                    img {
+                        position: absolute;
+                        top: 0px;
+                        left: 0px;
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 10px;
+                    }
+
+                }
+
+                .bt1 {
+                    width: 100%;
+                    text-transform: none;
+                    margin-top: 25px;
+                    background-color: #04c09a;
+                }
+
+                .text1 {
+                    color: rgb(255, 255, 255, 0.8);
+                    color: var(--color2);
+                    font-size: 14px;
+                    margin-top: 25px;
+                    text-align: center;
+                }
+
+                .bt2 {
+                    width: 100%;
+                    text-transform: none;
+                    margin-top: 10px;
+                    background-color: rgb(113, 60, 239);
+                }
+            }
+        }
+
+    }
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+@media (max-width:1200px) {
+    .ImageGeneration {
+        .ImageGenerationRight {
+            .inner {
+                .innerAiImage {
+                    width: 80%;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:768px) {
+    .ImageGeneration {
+        grid-template-columns: 0px 1fr;
+
+        .ImageGenerationRight {
+            .inner {
+                .innerAiImage {
+                    width: 100%;
+                    padding: 70px 25px 25px 25px;
+
+                    .intro {
+                        font-size: 12px;
+                    }
+
+                    .form-group {
+                        font-size: 14px;
+                        margin-top: 0px;
+
+                        input {
+                            line-height: 20px;
+                            font-size: 12px;
+                        }
+                    }
+
+                    .text1 {
+                        font-size: 12px;
+                    }
+
+
+                    .imageContainer {
+                        width: 180px;
+                        height: 180px;
+                    }
+                }
+            }
+
+        }
+    }
+}

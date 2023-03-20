@@ -1,0 +1,26 @@
+.header {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgba(52, 53, 65);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    border-bottom: 1px solid #ffffff33;
+    display: none;
+    padding-left: 20px;
+    z-index: 10;
+
+    .menu {
+        color: white;
+        cursor: pointer;
+    }
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+@media (max-width:768px) {
+    .header {
+        display: block;
+    }
+}
